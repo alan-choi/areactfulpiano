@@ -1,0 +1,98 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h1{
+  font-family: Raleway;
+  margin: auto;
+}
+.keyboard{
+  background-color: #006699;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+  height: 230px;
+  width: 600px;
+}
+.left-speaker{
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  height: 80px;
+  width: 80px;
+  background-size: contain;
+  background-image: url("speaker1.jpg");
+}
+.right-speaker{
+  position: absolute;
+  float: right;
+  left: 515px;
+  top: 5px;
+  height: 80px;
+  width: 80px;
+  background-size: contain;
+  background-image: url("speaker1.jpg");
+}
+.control-panel{
+  position: absolute;
+  top: 10px;
+  height: 50px;
+  width: 250px;
+  left: 180px;
+  background-color: gray;
+}
+.organ{
+  position: absolute;
+  margin: auto;
+  left: 50px;
+  top: 91px;
+  width: 510px;
+  text-align: center;
+}
+.key {
+  font-family: Raleway;
+  background-color: white;
+  width: 40px;
+  height: 140px;
+  border: 1px solid black;
+  margin: auto;
+  float:left;
+  box-shadow: 2px 2px 2px #000;
+  text-align: center;
+}
+
+div.sharp {
+  position: relative;
+  margin-left: -17px;
+  margin-right: -17px;
+  color: white;
+  background-color: black;
+  width: 30px;
+  height: 80px;
+  box-shadow: none;
+  line-height: 120px;
+  z-index: 1;
+  box-shadow: inset 0 0 5px white;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+}
+div.sharp.pressed{
+  margin-top: 2px;
+  background-color: #00FFCC;
+  box-shadow: inset 0 0 15px black;
+  transition-duration: .1s,
+}
+
+div.major{
+  line-height: 240px;
+  box-shadow: inset 0 0 5px black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+div.major.pressed{
+  background-color: #00FFCC;
+  box-shadow: inset 0 0 15px black;
+  margin-top: 2px;
+  transition-duration: .2s,
+}
