@@ -6,6 +6,7 @@
 
 Built an in-browser piano that plays notes/cords using the keyboard.
 
-`a`, `s`, `d`, `f`, `g`, `h`, `j`, `k`, `l`, `;`, `'` are the keys.
+`a` through `enter` are the standard (white) keys.
+`w` through '}' are the flats and sharps.
 
 Enjoy!

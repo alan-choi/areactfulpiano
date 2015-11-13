@@ -41,7 +41,6 @@
       }
       return(
         <div className={"key"+keyClass+ this.state.pressed}>
-
         </div>
       );
     }

@@ -1,18 +1,38 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 h1{
+  position: absolute;
   font-family: Raleway;
   margin: auto;
+  color: white;
+  top: 250px;
+  left: 40%;
 }
+
+body {
+  position: relative;
+  text-align: center;
+  background-image: image-url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%
+}
+
 .keyboard{
   background-color: #006699;
   border: 1px solid black;
   border-radius: 10px;
-  position: relative;
+  position: absolute;;
   height: 230px;
   width: 600px;
+  margin: auto;
+  top: 63vh;
+  left: 25vw;
 }
+
 .left-speaker{
   position: absolute;
   left: 5px;
@@ -20,7 +40,7 @@ h1{
   height: 80px;
   width: 80px;
   background-size: contain;
-  background-image: url("speaker1.jpg");
+  background-image: image-url("speaker1.jpg");
 }
 .right-speaker{
   position: absolute;
@@ -48,6 +68,7 @@ h1{
   width: 510px;
   text-align: center;
 }
+
 .key {
   font-family: Raleway;
   background-color: white;
