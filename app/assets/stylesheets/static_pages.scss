@@ -1,17 +1,35 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-h1{
+#content {
   position: absolute;
-  font-family: Raleway;
+  top: 65vh;
+  left: 0px;
+  right: 0px;
+  background-color: #006699;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 620px;
+  height: 238px;
+  display: block;
   margin: auto;
+}
+
+h1 {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 30vh;
   color: white;
-  top: 250px;
-  left: 40%;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
 }
 
 body {
+  font-family: Raleway;
   position: relative;
   text-align: center;
   background-image: image-url("background.jpg");
@@ -19,88 +37,68 @@ body {
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  margin:0px
+  margin: 0px
 }
+
 .song-form {
-  width: 340px;
+  width: 360px;
   margin: auto;
   position: relative;
+}
+
+.song-input {
+  height: 60px;
+  font-size: 24px;
+  margin: 10px;
+  resize: none;
+}
+
+.buttons-container {
+  float: right;
 }
 
 .song-form button {
   background-color: #006699;
   border: none;
   margin-top: 12px;
-  float: right;
 }
 
-.song-input {
-  height: 36px;
-  font-size: 24px;
-  margin: 10px;
-}
-
-.keyboard{
-  background-color: #006699;
-  border: 1px solid black;
-  border-radius: 10px;
-  position: absolute;;
-  height: 230px;
-  width: 600px;
-  margin: auto;
-  top: 63vh;
-  left: 25vw;
+.clear-form {
+  height: 20px;
+  width: 50px;
+  border-radius: 3px;
+  margin-top: 5px;
+  background-color: #FAFAFA;
 }
 
 .left-speaker{
-  position: absolute;
-  left: 5px;
-  top: 5px;
   height: 80px;
   width: 80px;
-  background-size: contain;
-  background-image: image-url("speaker1.jpg");
+  float: left;
 }
+
 .right-speaker{
-  position: absolute;
   float: right;
-  left: 515px;
-  top: 5px;
   height: 80px;
   width: 80px;
-  background-size: contain;
-  background-image: image-url("speaker1.jpg");
 }
-.control-panel{
-  position: absolute;
-  top: 10px;
-  height: 50px;
-  width: 250px;
-  left: 180px;
-  background-color: gray;
-}
-.organ{
-  position: absolute;
+
+.key-container{
   margin: auto;
-  left: 50px;
-  top: 91px;
+  margin-top: 10px;
   width: 510px;
-  text-align: center;
 }
 
 .key {
-  font-family: Raleway;
   background-color: white;
   width: 40px;
   height: 140px;
   border: 1px solid black;
-  margin: auto;
   float:left;
   box-shadow: 2px 2px 2px #000;
-  text-align: center;
 }
 
-div.sharp {
+.sharp {
   position: relative;
   margin-left: -17px;
   margin-right: -17px;
@@ -110,29 +108,21 @@ div.sharp {
   height: 80px;
   box-shadow: none;
   line-height: 120px;
-  z-index: 1;
   box-shadow: inset 0 0 5px white;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-
-}
-div.sharp.pressed{
-  margin-top: 2px;
-  background-color: #00FFCC;
-  box-shadow: inset 0 0 15px black;
-  transition-duration: .1s,
 }
 
-div.major{
+.major{
   line-height: 240px;
   box-shadow: inset 0 0 5px black;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
-div.major.pressed{
+li.pressed{
+  margin-top: 1px;
   background-color: #00FFCC;
   box-shadow: inset 0 0 15px black;
-  margin-top: 2px;
   transition-duration: .2s,
 }

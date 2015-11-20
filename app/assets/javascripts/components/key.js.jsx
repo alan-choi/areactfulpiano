@@ -1,8 +1,3 @@
-/* global React */
-/* global Note */
-/* global TONES */
-/* global KeyStore */
-
 (function(root){
   root.Key = React.createClass({
     getInitialState: function() {
@@ -39,7 +34,11 @@
     handleClick: function(event) {
       event.preventDefault();
       KeyActions.addKeyToSong(this.props.note);
-      this.temporaryHighlight(150);
+      this.temporaryHighlight(200);
+      KeyActions.keyPressed(this.props.note);
+      setTimeout(
+        function(){KeyActions.keyReleased(this.props.note);}.bind(this), 200
+      );
     },
 
     render: function(){
@@ -50,9 +49,11 @@
         keyClass = " major";
       }
       return(
-        <div className={"key"+keyClass+ this.state.pressed} onClick={this.handleClick}>
+        <li
+          className={"key"+keyClass+ this.state.pressed}
+          onClick={this.handleClick}>
           {this.props.note}
-        </div>
+        </li>
       );
     }
   });

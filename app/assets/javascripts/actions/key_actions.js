@@ -1,6 +1,3 @@
-/* global KeyConstants */
-/* global AppDispatcher  */
-
 var KeyActions = {
   keyPressed: function(name){
     var action = {

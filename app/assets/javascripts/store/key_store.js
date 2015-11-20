@@ -1,8 +1,3 @@
-/* global KeyStore */
-/* global KeyConstants */
-/* global EventEmitter  */
-/* global AppDispatcher  */
-
 (function(root){
   if (typeof KeyStore === "undefined") {
     root.KeyStore = {};

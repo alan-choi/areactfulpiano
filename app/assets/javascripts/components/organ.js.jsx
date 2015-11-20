@@ -1,9 +1,3 @@
-/* global React */
-/* global Note */
-/* global TONES */
-/* global KeyStore */
-/* global Key */
-
 (function(root){
   root.Organ = React.createClass({
     playSong: function(song) {
@@ -30,15 +24,17 @@
     render: function(){
       var keys = [];
       for (var key in TONES){
-          keys.push(<Key onClick={this.handleClick} note={key} />);
+          keys.push(<Key key={key} onClick={this.handleClick} note={key} />);
         }
 
         return(
           <div>
+            <img className="left-speaker" src="speaker1.jpg" />
+            <img className="right-speaker" src="speaker1.jpg" />
             <SongForm playSong={this.playSong}/>
-            <div className="organ">
+            <ul className="key-container">
               {keys}
-            </div>
+            </ul>
           </div>
         );
     }
