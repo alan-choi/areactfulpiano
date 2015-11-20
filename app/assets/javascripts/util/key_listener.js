@@ -12,16 +12,16 @@ var keyMap = {
             72: "A",
             85: "AS",
             74: "B",
-            75 :"Ca",
-            79 :"CSa",
-            76 :"Da",
-            80 :"DSa",
-            186 :"Ea",
-            222 :"Fa",
-            221: "FSa",
-            13: "Ga"
+            75 :"C+",
+            79 :"CS+",
+            76 :"D+",
+            80 :"DS+",
+            186 :"E+",
+            222 :"F+",
+            221: "FS+",
+            13: "G+"
           };
-          
+
 window.onkeydown = function(e) {
    var key = e.keyCode ? e.keyCode : e.which;
     KeyActions.keyPressed(keyMap[key]);

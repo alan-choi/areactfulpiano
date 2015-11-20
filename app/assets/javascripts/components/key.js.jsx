@@ -9,7 +9,7 @@
       return {pressed: ""};
     },
 
-    componentDidMount: function () {
+    componentDidMount: function() {
       this.noteName = this.props.note;
       if (typeof TONES[this.noteName] !== "undefined") {
         this.note = new Note(TONES[this.noteName]);
@@ -17,21 +17,29 @@
       }
     },
 
-    _onChange: function () {
+    _onChange: function() {
       var pressed;
       var keys = KeyStore.all();
       if (keys.indexOf(this.props.note) !== -1){
-        this.setState({pressed: " pressed"});
+        this.setState({ pressed: " pressed" });
         this.note.start();
       } else if (keys.indexOf(this.props.note) === -1){
-        this.setState({pressed: ""});
+        this.setState({ pressed: "" });
         this.note.stop();
       }
     },
 
+    temporaryHighlight: function(seconds) {
+      this.setState({ pressed: " pressed" });
+      setTimeout(function() {
+        this.setState({ pressed: "" });
+      }.bind(this), seconds);
+    },
+
     handleClick: function(event) {
       event.preventDefault();
-      debugger;
+      KeyActions.addKeyToSong(this.props.note);
+      this.temporaryHighlight(150);
     },
 
     render: function(){
