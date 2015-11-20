@@ -24,7 +24,7 @@
       event.preventDefault();
       KeyActions.submitSong(this.state.song);
       var song = this.state.song.replace(/ /g, "").split(",");
-      if (song[-1] === undefined) { song.splice(-1, 1); }
+      if (song[song.length-1] === "") { song.splice(-1, 1); }
       this.props.playSong(song);
       // this.setState({ song: "" });
     },
