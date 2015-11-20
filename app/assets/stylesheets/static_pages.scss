@@ -21,6 +21,24 @@ body {
   width: 100vw;
   margin:0px
 }
+.song-form {
+  width: 340px;
+  margin: auto;
+  position: relative;
+}
+
+.song-form button {
+  background-color: #006699;
+  border: none;
+  margin-top: 12px;
+  float: right;
+}
+
+.song-input {
+  height: 36px;
+  font-size: 24px;
+  margin: 10px;
+}
 
 .keyboard{
   background-color: #006699;

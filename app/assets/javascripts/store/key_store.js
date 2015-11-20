@@ -40,7 +40,7 @@
       root.KeyStore.emit(CHANGE_EVENT);
     },
 
-  dispatcherID: AppDispatcher.register(function (action) {
+    dispatcherID: AppDispatcher.register(function (action) {
     switch(action.actionType) {
     case KeyConstants.RESET_KEYS:
       resetKeys(action.noteName);
@@ -49,9 +49,6 @@
       addNote(action.noteName);
       break;
     }
-  })
-
-
+    }) 
   });
-
 })(this);

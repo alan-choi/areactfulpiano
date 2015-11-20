@@ -21,6 +21,7 @@ var keyMap = {
             221: "FSa",
             13: "Ga"
           };
+          
 window.onkeydown = function(e) {
    var key = e.keyCode ? e.keyCode : e.which;
     KeyActions.keyPressed(keyMap[key]);
