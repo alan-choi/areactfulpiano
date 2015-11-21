@@ -2,7 +2,6 @@
   if (typeof KeyStore === "undefined") {
     root.KeyStore = {};
   }
-
   var _keys = [];
   var _song = "";
   var CHANGE_EVENT = "CHANGE";
@@ -25,10 +24,6 @@
     _song += key+",";
   };
 
-  var removeSongKey = function() {
-    _song.slice(2);
-  };
-
   var resetSong = function(song) {
     _song = song;
   };
@@ -39,7 +34,7 @@
     },
 
     currentSong: function() {
-      var copySong = _song;
+      var copySong = _song.slice();
       return copySong;
     },
 
@@ -71,13 +66,11 @@
         addNewKeyToSong(action.key);
         KeyStore.emit(SONG_CHANGE_EVENT);
         break;
-      case KeyConstants.REMOVE_KEY_FROM_SONG:
-        removeSongKey();
-        break;
       case KeyConstants.UPDATE_WHOLE_SONG:
         resetSong(action.song);
         break;
       }
     })
   });
+  root.KeyStore.setMaxListeners(50);
 })(this);

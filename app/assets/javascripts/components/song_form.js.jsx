@@ -12,26 +12,39 @@
 
     updateSong: function() {
       var updatedSong = KeyStore.currentSong();
+
       this.setState({ song: updatedSong });
     },
 
     clearSong: function() {
-      this.setState({ song: "" });
       KeyActions.submitSong("");
+      this.setState({ song: "" });
     },
 
     handleSubmit: function(event) {
       event.preventDefault();
-      if (this.state.song === "") {
-        alert("please input a keys to play");
-      } else {
-      KeyActions.submitSong(this.state.song);
       var song = this.state.song.replace(/ /g, "").split(",");
+
+      if (song.length === 0) { alert("please input keys to play"); }
       if (song[song.length-1] === "") { song.splice(-1, 1); }
+
+      for (var i = 0; i < song.length; i++) {
+        if (!this.checkKeyinTones(song[i].toUpperCase())) {
+          alert(song[i]+ " is not a valid key");
+          return "invalid key";
+        }
+      }
+
+      KeyActions.submitSong(this.state.song);
       this.props.playSong(song);
       // if the form should reset after submitting
       // this.setState({ song: "" });
-      }
+    },
+
+    checkKeyinTones: function(currentKey) {
+      return Object.keys(TONES).some(
+        function(key) { return key  === currentKey; }
+      );
     },
 
     render: function() {
