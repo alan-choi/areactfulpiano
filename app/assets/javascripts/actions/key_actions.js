@@ -23,6 +23,15 @@ var KeyActions = {
     AppDispatcher.dispatch(action);
   },
 
+  currentPlayedSong: function(song) {
+    var action = {
+      actionType:KeyConstants.UPDATE_SONG_STATE,
+      newSong: song
+    };
+
+    AppDispatcher.dispation(action);
+  },
+
   submitSong: function(submitSong) {
     var action = {
       actionType: KeyConstants.UPDATE_WHOLE_SONG,

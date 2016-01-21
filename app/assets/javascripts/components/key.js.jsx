@@ -35,7 +35,7 @@
       event.preventDefault();
 
       KeyActions.addKeyToSong(this.props.note);
-      this.temporaryHighlight(200);
+      // this.temporaryHighlight(200);
       KeyActions.keyPressed(this.props.note);
       setTimeout(
         function(){ KeyActions.keyReleased(this.props.note); }.bind(this), 200
@@ -44,7 +44,7 @@
 
     render: function(){
       var keyClass;
-      
+
       if (this.props.note.indexOf("S") === 1){
         keyClass = " sharp";
       } else {

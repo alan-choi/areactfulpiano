@@ -1,11 +1,20 @@
 (function(root){
   root.Organ = React.createClass({
-    playSong: function(song) {
+    //state playing
+
+    checkSongState: function() {
+      if (!this.state.playing) {
+        this.playSong(song)
+      }
+    },
+
+    playSong: function() {
+      var song = KeyStore.currentSong();
       if (song.length === 0) {
         return "no more notes to play";
       }
       var currentKey = song[0].toUpperCase();
-      
+      KeyActions.currentPlayedSong(song);
       this.playKey(currentKey);
       setTimeout(function(){ this.playSong(song.slice(1)); }.bind(this), 1000);
     },
@@ -23,7 +32,7 @@
       var keys = [];
 
       for (var key in TONES){
-          keys.push(<Key key={ key } onClick={this.handleClick} note={ key } />);
+          keys.push(<Key key={ key } onClick={ this.handleClick } note={ key } />);
         }
 
       return(

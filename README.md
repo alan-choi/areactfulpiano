@@ -1,8 +1,6 @@
 ## A Reactful Piano
 
-[areactfulpiano][heroku]
-
-[heroku]: http://areactfulpiano.herokuapp.com
+[areactfulpiano]:http://areactfulpiano.herokuapp.com
 
 Built an in-browser piano that plays notes/cords using the keyboard.
 

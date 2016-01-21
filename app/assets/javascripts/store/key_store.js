@@ -51,16 +51,18 @@
     },
 
     changed: function() {
-      root.KeyStore.emit(CHANGE_EVENT);
+      // root.KeyStore.emit(CHANGE_EVENT);
     },
 
     dispatcherID: AppDispatcher.register(function(action) {
     switch(action.actionType) {
       case KeyConstants.RESET_KEYS:
         resetKeys(action.noteName);
+        KeyStore.emit(CHANGE_EVENT);
         break;
       case KeyConstants.ADD_KEY:
         addNote(action.noteName);
+        KeyStore.emit(CHANGE_EVENT);
         break;
       case KeyConstants.ADD_KEY_TO_SONG:
         addNewKeyToSong(action.key);
